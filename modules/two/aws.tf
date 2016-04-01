@@ -4,10 +4,6 @@ provider "aws" {
 
 variable "fail" {}
 
-variable "network" {
-  default = "0.0.0.0/0"
-}
-
 resource "aws_instance" "sample" {
   count = "${length(split(",", var.fail))}"
   ami = "ami-408c7f28"
